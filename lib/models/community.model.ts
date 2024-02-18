@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const comuunitySchema = new mongoose.Schema({
+const community = new mongoose.Schema({
     id: { type: String, required: true },
     username: { type: String, required: true, unique: true },
     name: { type: String, required: true },
@@ -24,6 +24,6 @@ const comuunitySchema = new mongoose.Schema({
     ]
 });
 
-const Community = mongoose.models.Community || mongoose.model('Community', comuunitySchema);
+const Community = mongoose.models.Community || mongoose.model('Community', community);
 
 export default Community;
