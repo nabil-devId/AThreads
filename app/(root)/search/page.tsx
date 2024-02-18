@@ -9,13 +9,13 @@ import { currentUser } from "@clerk/nextjs";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
-async function Page({ params }: { params: { id: string } }) {
+async function Page() {
     const user = await currentUser();
     if(!user) return null;
 
-    // const userInfo = await fetchUser(params.id);
-    // console.log(userInfo);
-    // if(!userInfo?.onboarded) return redirect('/onboarding');
+    const userInfo = await fetchUser(user.id);
+    console.log(userInfo);
+    if(!userInfo?.onboarded) return redirect('/onboarding');
 
     // Fetch user 
     
