@@ -5,6 +5,7 @@ import { UserButton, currentUser } from "@clerk/nextjs";
 
 export default async function Home() {
   const result = await fetchPosts(1, 30);
+  
   const user = await currentUser();
   return (
     <>
